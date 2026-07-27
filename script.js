@@ -17,7 +17,7 @@ const products = [
     id: "moura-60",
     category: "automotiva",
     brand: "Moura",
-    name: "Moura 60Ah",
+    name: "Moura",
     tag: "Mais pedida",
     desc: "Ideal para carros de passeio e utilitários leves. Partida firme e boa vida útil.",
     image: IMG.mouraAuto,
@@ -27,13 +27,12 @@ const products = [
       Aplicação: "Veículos leves",
       Garantia: "Até 18 meses*",
     },
-    priceFrom: 449,
   },
   {
     id: "moura-70",
     category: "automotiva",
     brand: "Moura",
-    name: "Moura 70Ah",
+    name: "Moura Extra",
     tag: "Carros médios",
     desc: "Mais reserva de energia para veículos com mais acessórios elétricos.",
     image: IMG.mouraEfb,
@@ -43,15 +42,14 @@ const products = [
       Aplicação: "Leves e médios",
       Garantia: "Até 18 meses*",
     },
-    priceFrom: 529,
   },
   {
     id: "heliar-60",
     category: "automotiva",
     brand: "Heliar",
-    name: "Heliar 60Ah",
+    name: "Heliar",
     tag: "Custo-benefício",
-    desc: "Boa relação preço e desempenho para o dia a dia em Palmas.",
+    desc: "Boa relação custo e desempenho para o dia a dia em Palmas.",
     image: IMG.heliarAuto,
     specs: {
       Capacidade: "60 Ah",
@@ -59,13 +57,12 @@ const products = [
       Aplicação: "Veículos leves",
       Garantia: "Até 12 meses*",
     },
-    priceFrom: 399,
   },
   {
     id: "zetta-60",
     category: "automotiva",
     brand: "Zetta",
-    name: "Zetta 60Ah",
+    name: "Zetta",
     tag: "Pronta entrega",
     desc: "Opção econômica com qualidade comprovada para uso urbano.",
     image: IMG.capBateria,
@@ -75,13 +72,12 @@ const products = [
       Aplicação: "Veículos leves",
       Garantia: "Até 12 meses*",
     },
-    priceFrom: 379,
   },
   {
     id: "cral-75",
     category: "automotiva",
     brand: "Cral",
-    name: "Cral 75Ah",
+    name: "Cral",
     tag: "SUV / Pick-up",
     desc: "Indicado para utilitários e veículos que pedem mais amperagem.",
     image: IMG.heliarFrota,
@@ -91,13 +87,12 @@ const products = [
       Aplicação: "Médios e utilitários",
       Garantia: "Até 12 meses*",
     },
-    priceFrom: 549,
   },
   {
     id: "moto-5ah",
     category: "moto",
     brand: "Moura / Heliar",
-    name: "Bateria de moto 5Ah",
+    name: "Bateria de moto",
     tag: "Motos",
     desc: "Modelos para motos e ciclomotores — consulte o encaixe do seu modelo.",
     image: IMG.mouraMoto,
@@ -107,13 +102,12 @@ const products = [
       Aplicação: "Motocicletas",
       Garantia: "Conforme marca*",
     },
-    priceFrom: 159,
   },
   {
     id: "estacionaria-45",
     category: "estacionaria",
     brand: "Linha estacionária",
-    name: "Estacionária 45Ah",
+    name: "Estacionária",
     tag: "Nobreak / Solar",
     desc: "Para nobreak, sistemas solares e backup de energia residencial.",
     image: IMG.mouraAgm,
@@ -123,13 +117,12 @@ const products = [
       Aplicação: "Nobreak / solar",
       Garantia: "Conforme marca*",
     },
-    priceFrom: 389,
   },
   {
     id: "estacionaria-100",
     category: "estacionaria",
     brand: "Linha estacionária",
-    name: "Estacionária 100Ah",
+    name: "Estacionária Plus",
     tag: "Alta autonomia",
     desc: "Maior reserva para sistemas que ficam mais tempo em uso.",
     image: IMG.mouraPesada,
@@ -139,13 +132,12 @@ const products = [
       Aplicação: "Solar / backup",
       Garantia: "Conforme marca*",
     },
-    priceFrom: 699,
   },
   {
     id: "nautica-105",
     category: "nautica",
     brand: "Linha náutica",
-    name: "Náutica 105Ah",
+    name: "Náutica",
     tag: "Embarcações",
     desc: "Para barcos e usos náuticos que exigem robustez e ciclos intensos.",
     image: IMG.heliarFrota,
@@ -155,18 +147,11 @@ const products = [
       Aplicação: "Náutica",
       Garantia: "Conforme marca*",
     },
-    priceFrom: 889,
   },
 ];
 
-const money = new Intl.NumberFormat("pt-BR", {
-  style: "currency",
-  currency: "BRL",
-  maximumFractionDigits: 0,
-});
-
 function waLink(productName) {
-  const msg = `Olá Brendo! Tenho interesse na ${productName}. Pode me passar disponibilidade e valor?`;
+  const msg = `Olá Palmas Bateria! Quero orçamento da ${productName}. Pode me passar disponibilidade e valor?`;
   return WHATSAPP_BASE + encodeURIComponent(msg);
 }
 
@@ -204,12 +189,12 @@ function renderProducts(filter = "all") {
             </div>
             <ul class="product__specs">${specs}</ul>
             <div class="product__footer">
-              <div class="product__price">
-                <small>A partir de</small>
-                <strong>${money.format(product.priceFrom)}</strong>
+              <div class="product__quote">
+                <small>Sem preço fixo</small>
+                <strong>Solicite orçamento</strong>
               </div>
               <a class="btn btn--whatsapp btn--sm" href="${waLink(product.name)}" target="_blank" rel="noopener noreferrer">
-                Peça comigo
+                Pedir orçamento
               </a>
             </div>
           </div>
@@ -295,8 +280,8 @@ function splitBrand() {
   [...text].forEach((char, i) => {
     const span = document.createElement("span");
     span.className = "char";
-    span.textContent = char;
-    span.style.animationDelay = `${0.12 + i * 0.06}s`;
+    span.textContent = char === " " ? "\u00A0" : char;
+    span.style.animationDelay = `${0.12 + i * 0.045}s`;
     brand.appendChild(span);
   });
 }
@@ -318,7 +303,7 @@ function setupTilt() {
 }
 
 function staggerFeatures() {
-  document.querySelectorAll(".feature, .category, .brands__list li").forEach((el, i) => {
+  document.querySelectorAll(".feature, .category, .brands__list li, .gallery__item, .feedback").forEach((el, i) => {
     el.style.setProperty("--delay", `${(i % 5) * 0.08}s`);
   });
 }
