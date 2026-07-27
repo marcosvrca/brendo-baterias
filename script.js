@@ -14,144 +14,72 @@ const IMG = {
 
 const products = [
   {
-    id: "moura-60",
+    id: "moura-auto",
     category: "automotiva",
-    brand: "Moura",
     name: "Moura",
-    tag: "Mais pedida",
     desc: "Ideal para carros de passeio e utilitários leves. Partida firme e boa vida útil.",
     image: IMG.mouraAuto,
-    specs: {
-      Capacidade: "60 Ah",
-      Tecnologia: "SLI / Chumbo-ácido",
-      Aplicação: "Veículos leves",
-      Garantia: "Até 18 meses*",
-    },
   },
   {
-    id: "moura-70",
+    id: "moura-extra",
     category: "automotiva",
-    brand: "Moura",
     name: "Moura Extra",
-    tag: "Carros médios",
     desc: "Mais reserva de energia para veículos com mais acessórios elétricos.",
     image: IMG.mouraEfb,
-    specs: {
-      Capacidade: "70 Ah",
-      Tecnologia: "SLI / Chumbo-ácido",
-      Aplicação: "Leves e médios",
-      Garantia: "Até 18 meses*",
-    },
   },
   {
-    id: "heliar-60",
+    id: "heliar",
     category: "automotiva",
-    brand: "Heliar",
     name: "Heliar",
-    tag: "Custo-benefício",
     desc: "Boa relação custo e desempenho para o dia a dia em Palmas.",
     image: IMG.heliarAuto,
-    specs: {
-      Capacidade: "60 Ah",
-      Tecnologia: "Chumbo-ácido",
-      Aplicação: "Veículos leves",
-      Garantia: "Até 12 meses*",
-    },
   },
   {
-    id: "zetta-60",
+    id: "zetta",
     category: "automotiva",
-    brand: "Zetta",
     name: "Zetta",
-    tag: "Pronta entrega",
     desc: "Opção econômica com qualidade comprovada para uso urbano.",
     image: IMG.capBateria,
-    specs: {
-      Capacidade: "60 Ah",
-      Tecnologia: "Chumbo-ácido",
-      Aplicação: "Veículos leves",
-      Garantia: "Até 12 meses*",
-    },
   },
   {
-    id: "cral-75",
+    id: "cral",
     category: "automotiva",
-    brand: "Cral",
     name: "Cral",
-    tag: "SUV / Pick-up",
-    desc: "Indicado para utilitários e veículos que pedem mais amperagem.",
+    desc: "Indicado para utilitários, SUVs e pick-ups.",
     image: IMG.heliarFrota,
-    specs: {
-      Capacidade: "75 Ah",
-      Tecnologia: "Chumbo-ácido",
-      Aplicação: "Médios e utilitários",
-      Garantia: "Até 12 meses*",
-    },
   },
   {
-    id: "moto-5ah",
+    id: "moto",
     category: "moto",
-    brand: "Moura / Heliar",
     name: "Bateria de moto",
-    tag: "Motos",
     desc: "Modelos para motos e ciclomotores — consulte o encaixe do seu modelo.",
     image: IMG.mouraMoto,
-    specs: {
-      Capacidade: "4–8 Ah",
-      Tecnologia: "Selada / AGM",
-      Aplicação: "Motocicletas",
-      Garantia: "Conforme marca*",
-    },
   },
   {
-    id: "estacionaria-45",
+    id: "estacionaria",
     category: "estacionaria",
-    brand: "Linha estacionária",
     name: "Estacionária",
-    tag: "Nobreak / Solar",
     desc: "Para nobreak, sistemas solares e backup de energia residencial.",
     image: IMG.mouraAgm,
-    specs: {
-      Capacidade: "45 Ah",
-      Tecnologia: "Ciclo profundo",
-      Aplicação: "Nobreak / solar",
-      Garantia: "Conforme marca*",
-    },
   },
   {
-    id: "estacionaria-100",
+    id: "estacionaria-plus",
     category: "estacionaria",
-    brand: "Linha estacionária",
     name: "Estacionária Plus",
-    tag: "Alta autonomia",
     desc: "Maior reserva para sistemas que ficam mais tempo em uso.",
     image: IMG.mouraPesada,
-    specs: {
-      Capacidade: "100 Ah",
-      Tecnologia: "Ciclo profundo",
-      Aplicação: "Solar / backup",
-      Garantia: "Conforme marca*",
-    },
   },
   {
-    id: "nautica-105",
+    id: "nautica",
     category: "nautica",
-    brand: "Linha náutica",
     name: "Náutica",
-    tag: "Embarcações",
     desc: "Para barcos e usos náuticos que exigem robustez e ciclos intensos.",
     image: IMG.heliarFrota,
-    specs: {
-      Capacidade: "105 Ah",
-      Tecnologia: "Ciclo profundo",
-      Aplicação: "Náutica",
-      Garantia: "Conforme marca*",
-    },
   },
 ];
 
 function waLink(productName) {
-  const msg = `Olá Palmas Bateria! Quero orçamento da ${productName}. Pode me passar disponibilidade e valor?`;
+  const msg = `Olá Palmas Baterias! Quero orçamento da bateria ${productName}. Pode me passar disponibilidade e valor?`;
   return WHATSAPP_BASE + encodeURIComponent(msg);
 }
 
@@ -162,12 +90,6 @@ function renderProducts(filter = "all") {
   grid.innerHTML = products
     .map((product, index) => {
       const hidden = filter !== "all" && product.category !== filter;
-      const specs = Object.entries(product.specs)
-        .map(
-          ([label, value]) =>
-            `<li><span>${label}</span><strong>${value}</strong></li>`
-        )
-        .join("");
 
       return `
         <article
@@ -176,25 +98,16 @@ function renderProducts(filter = "all") {
           style="--delay: ${(index % 6) * 0.06}s"
         >
           <div class="product__media">
-            <img src="${product.image}" alt="${product.name}" loading="lazy" />
+            <img src="${product.image}" alt="Bateria ${product.name}" loading="lazy" />
           </div>
           <div class="product__body">
             <div>
-              <div class="product__top">
-                <p class="product__brand">${product.brand}</p>
-                <span class="product__tag">${product.tag}</span>
-              </div>
               <h3>${product.name}</h3>
               <p class="product__desc">${product.desc}</p>
             </div>
-            <ul class="product__specs">${specs}</ul>
             <div class="product__footer">
-              <div class="product__quote">
-                <small>Sem preço fixo</small>
-                <strong>Solicite orçamento</strong>
-              </div>
               <a class="btn btn--whatsapp btn--sm" href="${waLink(product.name)}" target="_blank" rel="noopener noreferrer">
-                Pedir orçamento
+                Solicitar orçamento
               </a>
             </div>
           </div>

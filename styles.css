@@ -513,7 +513,7 @@ body.nav-locked {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-  max-width: 12ch;
+  max-width: 16ch;
 }
 
 .hero__brand .char {
@@ -936,30 +936,23 @@ body.nav-locked {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: stretch;
   gap: 0.75rem;
   padding-top: 0.35rem;
   border-top: 1px solid var(--line);
 }
 
-.product__quote {
-  display: grid;
-  gap: 0.1rem;
+.product__footer .btn {
+  width: 100%;
+  justify-content: center;
 }
 
-.product__quote small {
-  color: var(--muted);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.product__quote strong {
+.product h3 {
+  margin: 0;
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  letter-spacing: 0.03em;
-  line-height: 1;
-  color: var(--ink);
+  font-size: 1.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .feature-list {
