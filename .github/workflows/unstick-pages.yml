@@ -19,38 +19,21 @@ jobs:
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            const listed = await github.rest.repos.listDeployments({
-              owner,
-              repo,
-              environment: "github-pages",
-              per_page: 20,
-            });
-            for (const deployment of listed.data) {
-              const statuses = await github.rest.repos.listDeploymentStatuses({
-                owner,
-                repo,
-                deployment_id: deployment.id,
-                per_page: 1,
-              });
-              const state = statuses.data[0]?.state || "none";
-              core.info(`${deployment.id} ${deployment.sha.slice(0, 7)} ${state}`);
-              if (state === "success" || state === "inactive") continue;
-              try {
+            try {
+              const listed = await github.request("GET /repos/{owner}/{repo}/pages/deployments", { owner, repo });
+              const deployments = Array.isArray(listed.data) ? listed.data : [];
+              core.warning(`pages deployments: ${JSON.stringify(deployments).slice(0, 600)}`);
+              for (const deployment of deployments) {
+                const status = deployment.status || "";
+                if (!(status.includes("progress") || status === "queued" || status === "pending")) continue;
                 await github.request("POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel", {
                   owner,
                   repo,
                   pages_deployment_id: deployment.id,
                 });
-                core.info(`cancelled pages deployment ${deployment.id}`);
-              } catch (error) {
-                core.warning(`cancel ${deployment.id}: ${error.status} ${error.message}`);
+                core.warning(`cancelled ${deployment.id}`);
               }
-              await github.rest.repos.createDeploymentStatus({
-                owner,
-                repo,
-                deployment_id: deployment.id,
-                state: "inactive",
-                description: "Release stuck Pages deployment",
-              });
-              core.info(`marked inactive ${deployment.id}`);
+            } catch (error) {
+              const body = error.response?.data ? JSON.stringify(error.response.data) : "";
+              core.setFailed(`pages api ${error.status} ${error.message} ${body}`.slice(0, 700));
             }
