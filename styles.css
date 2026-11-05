@@ -488,31 +488,13 @@ body.nav-locked {
   animation: sheen 7s ease-in-out infinite;
 }
 
-.pay-badge-slot {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: max(1.25rem, calc((100% - var(--max)) / 2));
-  transform: translateY(-50%);
-}
-
 .pay-badge {
+  position: relative;
+  z-index: 2;
   display: block;
-  width: clamp(6.6rem, 16vw, 9.5rem);
+  width: 7.25rem;
   height: auto;
-  margin: 0;
-}
-
-@media (max-width: 719px) {
-  .pay-badge-slot {
-    top: 5.6rem;
-    right: 1rem;
-    transform: none;
-  }
-
-  .pay-badge {
-    width: 6.35rem;
-  }
+  margin: 0 0 1.15rem auto;
 }
 
 .pay-badge.reveal:not(.is-visible) {
