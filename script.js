@@ -9,7 +9,9 @@ const IMG = {
   heliarAuto: "Imagens/produtos/heliar-auto.png",
   heliarMoto: "Imagens/produtos/heliar-moto.png",
   heliarFrota: "Imagens/produtos/heliar-frota.png",
-  capBateria: "Imagens/produtos/cap-bateria.png",
+  zetta: "Imagens/produtos/zetta.png",
+  estacionaria: "Imagens/produtos/estacionaria-freedom.png",
+  estacionariaPlus: "Imagens/produtos/estacionaria-plus.png",
 };
 
 const products = [
@@ -23,7 +25,7 @@ const products = [
   {
     id: "moura-extra",
     category: "automotiva",
-    name: "Moura Extra",
+    name: "Moura EFB/AGM",
     desc: "Mais reserva de energia para veículos com mais acessórios elétricos.",
     image: IMG.mouraEfb,
   },
@@ -39,13 +41,13 @@ const products = [
     category: "automotiva",
     name: "Zetta",
     desc: "Opção econômica com qualidade comprovada para uso urbano.",
-    image: IMG.capBateria,
+    image: IMG.zetta,
   },
   {
     id: "cral",
     category: "automotiva",
-    name: "Cral",
-    desc: "Indicado para utilitários, SUVs e pick-ups.",
+    name: "Baterias para veículos pesados",
+    desc: "Para caminhões, ônibus e outros veículos pesados.",
     image: IMG.heliarFrota,
   },
   {
@@ -60,14 +62,14 @@ const products = [
     category: "estacionaria",
     name: "Estacionária",
     desc: "Para nobreak, sistemas solares e backup de energia residencial.",
-    image: IMG.mouraAgm,
+    image: IMG.estacionaria,
   },
   {
     id: "estacionaria-plus",
     category: "estacionaria",
     name: "Estacionária Plus",
     desc: "Maior reserva para sistemas que ficam mais tempo em uso.",
-    image: IMG.mouraPesada,
+    image: IMG.estacionariaPlus,
   },
   {
     id: "nautica",
