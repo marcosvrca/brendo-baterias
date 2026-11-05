@@ -6,7 +6,7 @@
     <title>Baterias Automotivas em Palmas | Palmas Baterias 24h</title>
     <meta
       name="description"
-      content="Palmas Baterias: baterias automotivas, moto e estacionárias em Palmas-TO. Sua bateria em até 15 minutos, instalação gratuita e orçamento pelo WhatsApp."
+      content="Palmas Baterias: loja de baterias automotivas 24 horas no Plano Diretor Sul, Palmas-TO. Entrega em até 15 minutos, instalação gratuita e orçamento pelo WhatsApp."
     />
     <meta name="author" content="Palmas Baterias" />
     <meta name="geo.region" content="BR-TO" />
@@ -61,54 +61,150 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "AutoPartsStore",
-        "name": "Palmas Baterias 24h",
-        "alternateName": "Baterias Palmas",
-        "description": "Venda de baterias automotivas, moto, náuticas e estacionárias em Palmas-TO. Entrega em até 15 minutos, instalação gratuita e orçamento pelo WhatsApp.",
-        "url": "https://www.bateriasempalmastocantins.com.br/",
-        "telephone": "+55-63-99222-6382",
-        "image": "https://www.bateriasempalmastocantins.com.br/Imagens/imagemdaloja.jpeg",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Q. 1006 Sul Alameda 4 — Plano Diretor Sul",
-          "addressLocality": "Palmas",
-          "addressRegion": "TO",
-          "postalCode": "77023-555",
-          "addressCountry": "BR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -10.2491,
-          "longitude": -48.3243
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Palmas"
-        },
-        "sameAs": [
-          "https://www.instagram.com/baterias.palmas",
-          "https://maps.app.goo.gl/mPvSXAWYAm8Tu38J9"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+55-63-99222-6382",
-          "contactType": "sales",
-          "availableLanguage": "Portuguese"
-        },
-        "makesOffer": [
+        "@graph": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Venda e instalação gratuita de baterias automotivas em Palmas"
-            }
+            "@type": "AutoPartsStore",
+            "@id": "https://www.bateriasempalmastocantins.com.br/#negocio",
+            "name": "Palmas Baterias",
+            "alternateName": ["Palmas Baterias 24h", "Baterias Palmas"],
+            "description": "Loja de baterias de carro, moto, náuticas e estacionárias em Palmas-TO. Atendimento 24 horas, entrega em até 15 minutos e instalação gratuita.",
+            "url": "https://www.bateriasempalmastocantins.com.br/",
+            "telephone": "+55-63-99222-6382",
+            "image": "https://www.bateriasempalmastocantins.com.br/Imagens/imagemdaloja.jpeg",
+            "hasMap": "https://www.google.com/maps?cid=6536555657097851767&hl=pt-BR",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Q. 1006 Sul Alameda 4 - Plano Diretor Sul",
+              "addressLocality": "Palmas",
+              "addressRegion": "TO",
+              "postalCode": "77023-555",
+              "addressCountry": "BR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -10.2448789,
+              "longitude": -48.3241207
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Palmas" },
+              { "@type": "Place", "name": "Plano Diretor Sul" },
+              { "@type": "Place", "name": "Plano Diretor Norte" },
+              { "@type": "Place", "name": "Taquaralto" },
+              { "@type": "Place", "name": "Aureny" },
+              { "@type": "Place", "name": "Graciosa" }
+            ],
+            "sameAs": [
+              "https://www.google.com/maps?cid=6536555657097851767&hl=pt-BR",
+              "https://maps.app.goo.gl/mPvSXAWYAm8Tu38J9",
+              "https://www.instagram.com/baterias.palmas"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+55-63-99222-6382",
+              "contactType": "sales",
+              "availableLanguage": "Portuguese",
+              "areaServed": "BR",
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+              }
+            },
+            "makesOffer": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Venda e instalação gratuita de baterias automotivas em Palmas"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Entrega de bateria automotiva em até 15 minutos em Palmas-TO"
+                }
+              }
+            ]
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Entrega de bateria automotiva em até 15 minutos em Palmas-TO"
-            }
+            "@type": "FAQPage",
+            "@id": "https://www.bateriasempalmastocantins.com.br/#duvidas",
+            "url": "https://www.bateriasempalmastocantins.com.br/#duvidas",
+            "isPartOf": { "@id": "https://www.bateriasempalmastocantins.com.br/#negocio" },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "A Palmas Baterias atende 24 horas?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. A loja na Q. 1006 Sul Alameda 4, Plano Diretor Sul, Palmas-TO, fica aberta 24 horas. O pedido pode ser feito pelo WhatsApp (63) 99222-6382."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Vocês entregam bateria em Palmas?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. A entrega em Palmas-TO sai em até 15 minutos, com instalação gratuita no local. Atendemos Plano Diretor Sul, Plano Diretor Norte, Taquaralto, Aureny, Graciosa e o restante da cidade."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "A instalação da bateria é gratuita?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. A instalação em Palmas não tem custo de mão de obra."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quais marcas de bateria vocês vendem?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Moura, Heliar, Zetta, Cral e Pioneira, para carro, moto, uso náutico e estacionário."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Onde fica a Palmas Baterias?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Q. 1006 Sul Alameda 4, Plano Diretor Sul, Palmas - TO, 77023-555. O perfil no Google Maps é o da Palmas Baterias."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como peço orçamento de bateria?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pelo WhatsApp (63) 99222-6382. O valor depende do veículo, então o orçamento é feito no atendimento, sem tabela fixa no site."
+                }
+              }
+            ]
           }
         ]
       }
@@ -469,7 +565,7 @@
           <header class="section__head reveal">
             <p class="eyebrow">Google</p>
             <h2>Avaliações dos clientes</h2>
-            <p>Nota 5,0 no Google, com 474 avaliações da loja em Palmas.</p>
+            <p>Nota 5,0 no Google, com 477 avaliações da loja em Palmas.</p>
           </header>
           <a
             class="google-score reveal"
@@ -480,7 +576,7 @@
             <span class="google-score__value">5,0</span>
             <span>
               <span class="google-score__stars" aria-label="5 de 5 estrelas">★★★★★</span>
-              <span class="google-score__count">474 avaliações no Google</span>
+              <span class="google-score__count">477 avaliações no Google</span>
             </span>
           </a>
           <ul class="feedback-list">
@@ -596,6 +692,65 @@
         </div>
       </section>
 
+      <section class="section faq" id="duvidas">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">Palmas-TO</p>
+            <h2>Bateria 24 horas em Palmas</h2>
+            <p>
+              A Palmas Baterias fica na Q. 1006 Sul Alameda 4, Plano Diretor Sul, CEP 77023-555.
+              Atendimento 24 horas, entrega em até 15 minutos e instalação gratuita.
+            </p>
+          </header>
+          <ul class="area-list reveal">
+            <li>Plano Diretor Sul</li>
+            <li>Plano Diretor Norte</li>
+            <li>Taquaralto</li>
+            <li>Aureny</li>
+            <li>Graciosa</li>
+            <li>Palmas-TO</li>
+          </ul>
+          <div class="faq-list">
+            <details class="reveal" open>
+              <summary>A Palmas Baterias atende 24 horas?</summary>
+              <p>
+                Sim. A loja na Q. 1006 Sul Alameda 4, Plano Diretor Sul, Palmas-TO, fica aberta 24 horas.
+                O pedido pode ser feito pelo WhatsApp (63) 99222-6382.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Vocês entregam bateria em Palmas?</summary>
+              <p>
+                Sim. A entrega em Palmas-TO sai em até 15 minutos, com instalação gratuita no local.
+                Atendemos Plano Diretor Sul, Plano Diretor Norte, Taquaralto, Aureny, Graciosa e o restante da cidade.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>A instalação da bateria é gratuita?</summary>
+              <p>Sim. A instalação em Palmas não tem custo de mão de obra.</p>
+            </details>
+            <details class="reveal">
+              <summary>Quais marcas de bateria vocês vendem?</summary>
+              <p>Moura, Heliar, Zetta, Cral e Pioneira, para carro, moto, uso náutico e estacionário.</p>
+            </details>
+            <details class="reveal">
+              <summary>Onde fica a Palmas Baterias?</summary>
+              <p>
+                Q. 1006 Sul Alameda 4, Plano Diretor Sul, Palmas - TO, 77023-555. O perfil no Google Maps é o da
+                Palmas Baterias.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Como peço orçamento de bateria?</summary>
+              <p>
+                Pelo WhatsApp (63) 99222-6382. O valor depende do veículo, então o orçamento é feito no
+                atendimento, sem tabela fixa no site.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <section class="section contact" id="contato">
         <div class="container contact__split reveal">
           <div class="contact__panel">
@@ -665,7 +820,7 @@
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
                   allowfullscreen
-                  src="https://maps.google.com/maps?q=Palmas%20Baterias%20Q.%201006%20Sul%20Alameda%204%20Plano%20Diretor%20Sul%20Palmas%20TO%2077023-555&z=16&output=embed&hl=pt-BR"
+                  src="https://maps.google.com/maps?q=Palmas%20Baterias&amp;ll=-10.2448789,-48.3241207&amp;z=17&amp;output=embed&amp;hl=pt-BR"
                 ></iframe>
               </div>
 
@@ -696,7 +851,7 @@
                     </a>
                     <a
                       class="map-card__icon map-card__icon--directions"
-                      href="https://www.google.com/maps/dir/?api=1&destination=Palmas%20Baterias%20Q.%201006%20Sul%20Alameda%204%20Plano%20Diretor%20Sul%20Palmas%20TO%2077023-555"
+                      href="https://www.google.com/maps/dir/?api=1&amp;destination=-10.2448789,-48.3241207"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Como chegar"
@@ -712,7 +867,7 @@
                   </div>
                 </div>
                 <div class="map-card__meta">
-                  <span class="map-card__rating">Entrega em até 15 min</span>
+                  <span class="map-card__rating">Aberto 24 horas · entrega em até 15 min</span>
                   <a
                     class="map-card__link"
                     href="https://wa.me/5563992226382?text=Ol%C3%A1%20Palmas%20Baterias!%20Quero%20saber%20como%20chegar."

@@ -1016,6 +1016,51 @@ body.nav-locked {
   color: var(--ink-soft);
 }
 
+.area-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.area-list li {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.faq-list {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 46rem;
+}
+
+.faq-list details {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.faq-list summary {
+  cursor: pointer;
+  padding: 1rem 1.15rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list details p {
+  margin: 0;
+  padding: 0 1.15rem 1rem;
+  color: var(--ink-soft);
+}
+
 .about {
   background:
     linear-gradient(135deg, rgba(245, 196, 0, 0.14), transparent 42%),
