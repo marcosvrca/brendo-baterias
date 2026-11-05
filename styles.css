@@ -182,26 +182,26 @@ a {
 .brand-mark__icon {
   display: grid;
   place-items: center;
-  width: 1.85rem;
-  height: 1.85rem;
+  width: 2.35rem;
   flex-shrink: 0;
-  background: var(--brand-yellow);
-  color: var(--brand-dark);
+  background: transparent;
   transition: transform 0.35s var(--ease-out);
 }
 
-.brand-mark__icon svg {
+.brand-mark__icon img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .brand-mark:hover .brand-mark__icon {
-  transform: rotate(-12deg) scale(1.08);
+  transform: scale(1.06);
 }
 
 .brand-mark__text {
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 4.2vw, 1.4rem);
-  letter-spacing: 0.06em;
+  font-size: clamp(0.92rem, 3.5vw, 1.28rem);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -468,15 +468,15 @@ body.nav-locked {
   transform: scale(1.08);
   animation: hero-zoom 18s ease-out forwards;
   will-change: transform;
-  filter: brightness(1.28) contrast(1.04) saturate(1.05);
+  filter: brightness(0.82) contrast(1.05) saturate(1);
 }
 
 .hero__veil {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(8, 10, 14, 0.1) 0%, rgba(8, 10, 14, 0.28) 45%, rgba(8, 10, 14, 0.72) 100%),
-    linear-gradient(90deg, rgba(8, 10, 14, 0.38) 0%, rgba(8, 10, 14, 0.1) 55%, transparent 100%);
+    linear-gradient(180deg, rgba(8, 10, 14, 0.3) 0%, rgba(8, 10, 14, 0.42) 45%, rgba(8, 10, 14, 0.78) 100%),
+    linear-gradient(90deg, rgba(8, 10, 14, 0.42) 0%, rgba(8, 10, 14, 0.18) 55%, rgba(8, 10, 14, 0.06) 100%);
 }
 
 .hero__sheen {
@@ -486,6 +486,23 @@ body.nav-locked {
   background: linear-gradient(115deg, transparent, rgba(245, 196, 0, 0.18), transparent);
   transform: rotate(12deg);
   animation: sheen 7s ease-in-out infinite;
+}
+
+.pay-badge {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 7.25rem;
+  height: auto;
+  margin: 0 0 1.15rem;
+}
+
+.pay-badge.reveal:not(.is-visible) {
+  filter: blur(6px) drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35));
+}
+
+.pay-badge.reveal.is-visible {
+  filter: blur(0) drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35));
 }
 
 .hero__content {
@@ -530,13 +547,6 @@ body.nav-locked {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.92);
-}
-
-.hero__lead {
-  margin: 1rem 0 0;
-  max-width: 34rem;
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.84);
 }
 
 .hero__actions {
@@ -1775,5 +1785,10 @@ body.nav-locked {
     opacity: 1;
     transform: none;
     filter: none;
+  }
+
+  .pay-badge.reveal,
+  .pay-badge.reveal:not(.is-visible) {
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35));
   }
 }
