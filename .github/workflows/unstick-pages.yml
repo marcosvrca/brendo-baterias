@@ -1,0 +1,36 @@
+name: Unstick Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  pages: write
+  deployments: write
+
+jobs:
+  unstick:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel stuck GitHub Pages deployments
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const listed = await github.request("GET /repos/{owner}/{repo}/pages/deployments", { owner, repo });
+            const deployments = Array.isArray(listed.data) ? listed.data : [];
+            core.info(`pages deployments: ${deployments.length}`);
+            for (const deployment of deployments) {
+              core.info(`${deployment.id} ${deployment.status} ${deployment.commit || deployment.sha || ""}`);
+              const status = deployment.status || "";
+              const stuck = status.includes("progress") || status === "queued" || status === "pending";
+              if (!stuck) continue;
+              await github.request("POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel", {
+                owner,
+                repo,
+                pages_deployment_id: deployment.id,
+              });
+              core.info(`cancelled ${deployment.id}`);
+            }
