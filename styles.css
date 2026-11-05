@@ -497,6 +497,12 @@ body.nav-locked {
   margin: 0 0 1.15rem auto;
 }
 
+@media (min-width: 720px) {
+  .pay-badge {
+    margin-left: 0;
+  }
+}
+
 .pay-badge.reveal:not(.is-visible) {
   filter: blur(6px) drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35));
 }
