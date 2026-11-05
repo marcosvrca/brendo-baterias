@@ -501,7 +501,9 @@ body.nav-locked {
 
 @media (min-width: 720px) {
   .pay-badge {
-    top: 4.75rem;
+    top: max(4.75rem, calc(15.8svh - 3.625rem));
+    left: auto;
+    right: max(1rem, calc(8.3% - 3.625rem));
   }
 }
 
