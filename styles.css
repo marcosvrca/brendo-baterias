@@ -489,17 +489,19 @@ body.nav-locked {
 }
 
 .pay-badge {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  z-index: 3;
+  top: max(4.6rem, calc(19.5svh - 3.625rem));
+  left: calc(76% - 3.625rem);
   display: block;
   width: 7.25rem;
   height: auto;
-  margin: 0 0 1.15rem auto;
+  margin: 0;
 }
 
 @media (min-width: 720px) {
   .pay-badge {
-    margin-left: 0;
+    top: 4.75rem;
   }
 }
 
